@@ -1,0 +1,254 @@
+//マップ型変数breakpointsを定義
+$breakpoints: (
+//キー　　値
+ 'sm': 'screen and (min-width: 576px)',
+ 'md': 'screen and (max-width: 576px)',
+ 'lg': 'screen and (max-width: 992px)',
+ 'xl': 'screen and (max-width: 1200px)'
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: md) {
+//map-get(マップ型変数, キー)で値を取得
+  @media #{map-get($breakpoints, $breakpoint)} {
+    //この中をカスタムできる
+    @content;
+  }
+}
+
+/* ベース色 */
+$color-white: #ffffff;
+$color-gray: rgb(197, 205, 209);
+$color-accent: rgb(211, 050, 505);
+/* テキスト色 */
+$color-text: #222222;
+
+/* 透明度 */
+$opacity: 0.7;
+
+/* フォントサイズ */
+$fontSize-h1: 4.0rem;
+$fontSize-h2: 3.0rem;
+$fontSize-h3: 2.0rem;
+$fontSize-p: 1.4rem;
+$fontSize-copyright: 1.2rem;
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, div, span, img, table, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  vertical-align: baseline;
+  font-size: 62.5%;
+  box-sizing: border-box;
+  position: relative;
+  color: $color-text;
+}
+
+header, footer, nav, section {
+  display: block;
+}
+
+a{
+  cursor: pointer;
+
+}
+
+body {
+  line-height: 1;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+  list-style-type: none;
+}
+
+h1{
+  font-size: $fontSize-h1;
+}
+
+h2{
+  font-size: $fontSize-h2;
+  @include mq(sm){
+    font-size: 3.5rem;
+  }
+}
+
+h3{
+  font-size: $fontSize-h3;
+  @include mq(sm){
+    font-size: 2.5rem;
+  }
+}
+
+p{
+  font-size: $fontSize-p;
+  line-height: 20px;
+  @include mq(sm){
+    font-size: 1.8rem;
+    line-height: 30px;
+  }
+}
+
+.header{
+  border-bottom: $color-gray 1px solid;
+  .header-wrap{
+    background-color:$color-gray;
+  }
+    ul{
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .header-list{
+        margin-right: 30px;
+        &:nth-child(3){
+          margin-right: 0;
+        }
+        a{
+          text-decoration: none;
+          font-size: 2rem;
+          color: $color-text;
+        }
+      }
+    }
+    .top{
+      display: table;
+      width: 100%;
+        .top-wrap{
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            height: 70vh;
+            background: radial-gradient(rgba(197, 205, 209, 0.8), rgba(211, 50, 505, 0.8)),
+            url(../img/okinawa.jpg);
+            background-size: cover;
+            .top-p{
+              padding-top: 20px;
+              font-size: 2.0rem;
+            }
+        }
+    }
+}
+
+.main{
+    width: 95%;
+    margin: 0 auto;
+    max-width: 1000px;
+    section{
+        padding: 40px 0;
+        border-bottom: $color-gray 1px solid;
+    }
+    .title-wrap{
+        text-align: center;
+        padding-bottom: 20px;
+        .h2-title{
+            padding-bottom: 20px;
+        }
+    }
+    .profile-wrap{
+      .profile-top{
+        display: flex;
+        padding-bottom: 30px;
+        @include mq(sm){
+          justify-content: space-around;
+        }
+        .profile-img{
+          img{
+            width: 100px;
+            max-width: 100%;
+            margin: 0 auto;
+            @include mq(sm){
+              width: 300px;
+            }
+          }
+        }
+        .profile-name-qa-wrap{
+          padding-left: 20px;
+          .profile-name{
+            h1{
+              font-size: 3.5rem;
+            }
+          }
+          .profile-qa{
+            p{
+              font-size: 1.2rem;
+              @include mq(sm){
+                font-size: 1.6rem;
+              }  
+            }
+          }
+        }
+      }
+      .profile-about{
+        padding-bottom: 40px;
+      }
+      .profile-pr{
+        .main-h3{
+          padding-bottom: 10px;
+          border-bottom: 2px solid $color-text;
+        }
+      }
+    }
+    .skills{
+      text-align: center;
+      .skill{
+        padding-bottom: 20px;
+        p{
+          font-size: 1.8rem;
+          @include mq(sm){
+            font-size: 2.2rem;
+          }
+        }
+        .star{
+          color: $color-accent;
+        }
+      }
+    }
+    .portfolio{
+      .portfolio-wrap{
+        text-align: center;
+        padding-bottom: 50px;
+        .portfolio-img-wrap{
+          padding-bottom: 15px;
+          img{
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, .5);
+            padding-bottom: 10px;
+            width: 300px;
+            max-width: 100%;
+            margin: 0 auto;
+          }
+          a{
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+}
+
+.footer{
+  text-align: center;
+  background-color: $color-gray;
+  .copyright{
+    font-size: $fontSize-copyright;
+  }
+}
+
+// トップページへ戻るボタン
+.top-page{
+  position: fixed;
+  color: $color-text;
+  background-color:$color-gray;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  padding: 20px 20px;
+  border-radius: 5px;
+  right: 10px;
+  bottom: 25px;
+}
