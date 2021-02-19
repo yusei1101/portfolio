@@ -117,6 +117,27 @@ p{
           color: $color-text;
         }
       }
+      .border {
+        display: inline-block;
+        position: relative;
+        color: hsl(222, 25%, 14%);
+        &:after{
+          content: '';
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 4px;
+          bottom: 0;
+          left: 0;
+          background-color: $color-accent;
+          transform-origin: bottom right;
+          transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        &:hover::after{
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }      
     }
     .top{
       display: table;
@@ -200,7 +221,7 @@ p{
       text-align: center;
       .skill{
         padding-bottom: 20px;
-        p{
+        .skill-title{
           font-size: 1.8rem;
           @include mq(sm){
             font-size: 2.2rem;
@@ -214,7 +235,7 @@ p{
     .portfolio{
       .portfolio-wrap{
         text-align: center;
-        padding-bottom: 50px;
+        padding-bottom: 80px;
         .portfolio-img-wrap{
           padding-bottom: 15px;
           img{
@@ -224,9 +245,12 @@ p{
             max-width: 100%;
             margin: 0 auto;
           }
-          a{
-            font-size: 1.6rem;
-          }
+        }
+        .main-h3{
+          padding-bottom: 15px;
+        }
+        a{
+          font-size: 1.6rem;
         }
       }
     }

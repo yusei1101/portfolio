@@ -103,6 +103,30 @@ p {
   color: #222222;
 }
 
+.header ul .border {
+  display: inline-block;
+  position: relative;
+  color: #1b202d;
+}
+
+.header ul .border:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: #d332ff;
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.header ul .border:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 .header .top {
   display: table;
   width: 100%;
@@ -200,12 +224,12 @@ p {
   padding-bottom: 20px;
 }
 
-.main .skills .skill p {
+.main .skills .skill .skill-title {
   font-size: 1.8rem;
 }
 
 @media screen and (min-width: 576px) {
-  .main .skills .skill p {
+  .main .skills .skill .skill-title {
     font-size: 2.2rem;
   }
 }
@@ -216,7 +240,7 @@ p {
 
 .main .portfolio .portfolio-wrap {
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 }
 
 .main .portfolio .portfolio-wrap .portfolio-img-wrap {
@@ -231,7 +255,11 @@ p {
   margin: 0 auto;
 }
 
-.main .portfolio .portfolio-wrap .portfolio-img-wrap a {
+.main .portfolio .portfolio-wrap .main-h3 {
+  padding-bottom: 15px;
+}
+
+.main .portfolio .portfolio-wrap a {
   font-size: 1.6rem;
 }
 
