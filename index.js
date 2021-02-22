@@ -12,7 +12,7 @@ $(window).on("scroll", function(){
   });
 
 
-// リンク先まで飛ばす
+//リンク先まで飛ばす
 $("a[href]").click(function(){
     const speed = 500;
     const headerHight = 0;

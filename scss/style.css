@@ -74,12 +74,8 @@ p {
   }
 }
 
-.header {
-  border-bottom: #c5cdd1 1px solid;
-}
-
 .header .header-wrap {
-  background-color: #c5cdd1;
+  background-color: #222222;
 }
 
 .header ul {
@@ -98,9 +94,9 @@ p {
 }
 
 .header ul .header-list a {
+  color: #e3e3e3;
   text-decoration: none;
   font-size: 2rem;
-  color: #222222;
 }
 
 .header ul .border {
@@ -117,7 +113,7 @@ p {
   height: 4px;
   bottom: 0;
   left: 0;
-  background-color: #d332ff;
+  background-color: #009E3D;
   transform-origin: bottom right;
   transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
@@ -137,7 +133,7 @@ p {
   vertical-align: middle;
   text-align: center;
   height: 70vh;
-  background: radial-gradient(rgba(197, 205, 209, 0.8), rgba(211, 50, 255, 0.8)), url(../img/okinawa.jpg);
+  background: radial-gradient(rgba(197, 205, 209, 0.8), rgba(0, 158, 61, 0.8)), url(../img/okinawa.jpg) no-repeat center center;
   background-size: cover;
 }
 
@@ -147,14 +143,15 @@ p {
 }
 
 .main {
-  width: 95%;
-  margin: 0 auto;
-  max-width: 1000px;
+  background-color: #e3e3e3;
 }
 
 .main section {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 1000px;
   padding: 40px 0;
-  border-bottom: #c5cdd1 1px solid;
+  border-bottom: #e3e3e3 1px solid;
 }
 
 .main .title-wrap {
@@ -216,16 +213,21 @@ p {
   border-bottom: 2px solid #222222;
 }
 
+.main .profile-wrap .profile-pr p {
+  padding-top: 20px;
+}
+
 .main .skills {
   text-align: center;
 }
 
 .main .skills .skill {
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .main .skills .skill .skill-title {
   font-size: 1.8rem;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 576px) {
@@ -236,6 +238,10 @@ p {
 
 .main .skills .skill .star {
   color: #d332ff;
+}
+
+.main .skills .skill .skill-content {
+  font-size: 1.3rem;
 }
 
 .main .portfolio .portfolio-wrap {
@@ -265,17 +271,18 @@ p {
 
 .footer {
   text-align: center;
-  background-color: #c5cdd1;
+  background-color: #222222;
 }
 
 .footer .copyright {
+  color: #ffffff;
   font-size: 1.2rem;
 }
 
 .top-page {
   position: fixed;
-  color: #222222;
-  background-color: #c5cdd1;
+  color: #ffffff;
+  background-color: #222222;
   cursor: pointer;
   transition: all 0.3s ease 0s;
   padding: 20px 20px;

@@ -18,8 +18,8 @@ $breakpoints: (
 
 /* ベース色 */
 $color-white: #ffffff;
-$color-gray: rgb(197, 205, 209);
-$color-accent: rgb(211, 050, 505);
+$color-gray: rgb(227, 227, 227);
+$color-accent: #009E3D;
 /* テキスト色 */
 $color-text: #222222;
 
@@ -97,24 +97,23 @@ p{
 }
 
 .header{
-  border-bottom: $color-gray 1px solid;
   .header-wrap{
-    background-color:$color-gray;
+    background-color:$color-text;
   }
-    ul{
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .header-list{
-        margin-right: 30px;
-        &:nth-child(3){
-          margin-right: 0;
-        }
-        a{
+  ul{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .header-list{
+      margin-right: 30px;
+      &:nth-child(3){
+        margin-right: 0;
+      }
+      a{
+          color: $color-gray;
           text-decoration: none;
           font-size: 2rem;
-          color: $color-text;
         }
       }
       .border {
@@ -147,8 +146,8 @@ p{
             vertical-align: middle;
             text-align: center;
             height: 70vh;
-            background: radial-gradient(rgba(197, 205, 209, 0.8), rgba(211, 50, 505, 0.8)),
-            url(../img/okinawa.jpg);
+            background: radial-gradient(rgba(197, 205, 209, 0.8), rgba(0, 158, 61, 0.8)),
+            url(../img/okinawa.jpg) no-repeat center center;
             background-size: cover;
             .top-p{
               padding-top: 20px;
@@ -159,10 +158,11 @@ p{
 }
 
 .main{
-    width: 95%;
-    margin: 0 auto;
-    max-width: 1000px;
-    section{
+  background-color: $color-gray;
+  section{
+        width: 95%;
+        margin: 0 auto;
+        max-width: 1000px;
         padding: 40px 0;
         border-bottom: $color-gray 1px solid;
     }
@@ -215,20 +215,27 @@ p{
           padding-bottom: 10px;
           border-bottom: 2px solid $color-text;
         }
+        p{
+          padding-top: 20px;
+        }
       }
     }
     .skills{
       text-align: center;
       .skill{
-        padding-bottom: 20px;
+        padding-bottom: 30px;
         .skill-title{
           font-size: 1.8rem;
+          font-weight: bold;
           @include mq(sm){
             font-size: 2.2rem;
           }
         }
         .star{
-          color: $color-accent;
+          color: rgb(211, 050, 505);
+        }
+        .skill-content{
+          font-size: 1.3rem;
         }
       }
     }
@@ -258,8 +265,9 @@ p{
 
 .footer{
   text-align: center;
-  background-color: $color-gray;
+  background-color: $color-text;
   .copyright{
+    color: $color-white;
     font-size: $fontSize-copyright;
   }
 }
@@ -267,8 +275,8 @@ p{
 // トップページへ戻るボタン
 .top-page{
   position: fixed;
-  color: $color-text;
-  background-color:$color-gray;
+  color: $color-white;
+  background-color:$color-text;
   cursor: pointer;
   transition: all 0.3s ease 0s;
   padding: 20px 20px;
